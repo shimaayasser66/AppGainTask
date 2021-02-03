@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_app/models/item_model.dart';
+import 'package:flutter_movie_app/screens/movie_detail.dart';
+import 'package:flutter_movie_app/screens/movie_list.dart';
 
-import 'screens/home_screen.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(App());
+}
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: strings.appTitle,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomeScreen(),
+      theme: ThemeData.dark(),
+      initialRoute: "/",
+      routes: {
+        "/":(_)=>MovieList(),
+      },
     );
   }
 }
-
